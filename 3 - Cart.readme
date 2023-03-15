@@ -1,0 +1,81 @@
+
+
+--------------------------------- Create Cart ------------------------------------------------------
+-- Before testing Cart operations, we need to insert some data in the Customer table
+/* 
+use oams;
+insert into customer(id, email_id, mobile_number, name, password) values(2, "xyz@gmail.com", "91987655432", "ABC", "abcdef");
+
+*/
+
+POST
+http://localhost:9092/cart/createcart
+Body -> Raw -> JSON
+   {
+   	"id" : 1,
+    "createdDate" : "2023-01-15",
+    "customer" : {"id" : 2}  
+	}
+---------------------------------------------------------------------------------
+	{
+   	"id" : 2,
+    "createdDate" : "2023-12-01",
+    "customer" : {"id" : 1}  
+	}
+
+
+-------------------------------------- View Cart Info --------------------------------------------------
+GET
+http://localhost:9092/cart/cartinfo/{customerId}
+http://localhost:9092/cart/cartinfo/2
+
+
+-------------------------------------- View Medicines --------------------------------------------------
+GET
+http://localhost:9092/cart/viewmedicines/{cartId}
+http://localhost:9092/cart/viewmedicines/1
+
+-------------------------------------- Add Cart Medicine --------------------------------------------------
+POST
+http://localhost:9092/cart/addmedicine
+
+Body -> Raw -> JSON
+
+	{
+   	"id" : 3,
+    "cart" : {"id" : 52},
+    "medicine" : {"id" : 1},
+    "quantity" : "2",
+    "cost" : "100"
+	}
+--------------------------------------------------
+   {
+   	"id" : 2,
+    "cart" : {"id" : 1},
+    "medicine" : {"id" : 2},
+    "quantity" : "2",
+    "cost" : "100"
+	}
+	
+-------------------------------------- Delete Cart Medicine --------------------------------------------------
+DELETE
+http://localhost:9092/cart/deletemedicine
+Body -> Raw -> JSON
+   {
+   	"id" : 3,
+    "cart" : {"id" : 52},
+    "medicine" : {"id" : 1},
+    "quantity" : "2",
+    "cost" : "100.50"
+	}
+
+-------------------------------- Delete All Medicines from Cart --------------------------------------------------
+DELETE
+
+http://localhost:9092/cart/deleteallmedicines/{cartId}
+http://localhost:9092/cart/deleteallmedicines/1
+
+
+
+
+	

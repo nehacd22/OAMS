@@ -1,0 +1,59 @@
+
+
+--------------------------------- View All Medicines ------------------------------------------------------
+GET
+http://localhost:9092/medicine/viewallmedicines
+
+
+---------------------------------- Add Medicine ----------------------------------------------------
+POST
+http://localhost:9092/medicine/addmedicine
+
+Body -> Raw -> JSON
+   {
+    "id" : 1,
+    "name" : "Sudarshan Churna",
+    "cost" : "500.50",
+    "mfdDate" : "2023-01-01",
+    "expiryDate" : "2030-01-01",
+    "company" : "Himalaya Healthcare",
+    "category" : {"id" : 1}  
+	}
+----------------------------------- Add Medicine ---------------------------------------------------
+	{
+    "id" : 2,
+    "name" : "Kumkumadi Oil",
+    "cost" : "250",
+    "mfdDate" : "2023-01-01",
+    "expiryDate" : "2030-01-01",
+    "company" : "Ayur Herbal Ltd.",
+    "category" : {"id" : 2}  
+	}
+
+
+----------------------------------- Update Medicine ------------------------------------------------------
+PUT
+http://localhost:9092/medicine/updatemedicine
+
+Body -> Raw -> JSON
+   {
+    "id" : 552,
+    "name" : "Brahmi",
+    "cost" : "200.99",
+    "mfdDate" : "2020-01-01",
+    "expiryDate" : "2025-01-01",
+    "company" : "ABCD Ltd.",
+    "category" : { "id" : 1 }
+	}
+	
+-------------------------------------- Delete Medicine --------------------------------------------------------------
+DELETE
+http://localhost:9092/medicine/deletemedicine/3
+
+
+-------------------------------------- View Medicine by Category ---------------------------------------------------
+GET
+http://localhost:9092/medicine/viewmedicinesbycategory/1
+
+
+	

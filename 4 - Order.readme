@@ -1,0 +1,55 @@
+
+
+--------------------------------- Add Order ------------------------------------------------------
+POST
+http://localhost:9092/order/add/{cartId}
+http://localhost:9092/order/add/1
+
+
+--------------------------------- Update Order ------------------------------------------------------
+PUT
+http://localhost:9092/order/update
+Body -> Raw -> JSON
+{
+	"id": "2",
+	"dispatchDate" : "2023-01-22"
+}
+
+
+--------------------------------- Update Status -----------------------------------------------------
+PUT
+http://localhost:9092/order/updatestatus/{id}
+http://localhost:9092/order/updatestatus/2
+Body -> Raw -> JSON
+
+	Completed
+
+# Note: Only put the word in the raw JSON data. Dont enclose with "".
+
+--------------------------------- Cancel Order ------------------------------------------------------
+PUT
+http://localhost:9092/order/cancel/{id}
+http://localhost:9092/order/cancel/2
+
+
+--------------------------------- Show Order ---------------------------------------------------------
+GET
+http://localhost:9092/order/show/{id}
+http://localhost:9092/order/show/1
+
+
+--------------------------------- Show All Orders ------------------------------------------------------
+GET
+http://localhost:9092/order/showall
+
+
+--------------------------------- Show Orders By Customer -----------------------------------------------
+GET
+http://localhost:9092/order/showbycustomer/{customerId}
+http://localhost:9092/order/showbycustomer/2
+
+
+
+
+
+	

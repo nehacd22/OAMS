@@ -1,0 +1,38 @@
+
+--------------------------------- Show All Categories ------------------------------------------------------
+GET
+http://localhost:9092/category/showallcategories
+
+
+
+--------------------------------- Add Category ------------------------------------------------------
+POST
+http://localhost:9092/category/addcategory
+Body -> Raw -> JSON
+   {
+   	"id" : "1",
+    "name" : "Herbal powders"
+	}
+	
+	{
+   	"id" : "2",
+    "name" : "Medicated oils"
+	}
+
+
+--------------------------------- Update Category ------------------------------------------------------
+PUT
+http://localhost:9092/category/updatecategory
+
+Body -> Raw -> JSON
+	{
+   	"id" : "2",
+    "name" : "Medicated oils - updated"
+	}
+
+--------------------------------- Delete Category ------------------------------------------------------
+DELETE
+http://localhost:9092/deletecategory/3
+
+
+
